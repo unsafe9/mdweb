@@ -45,9 +45,9 @@ class MarkdownGraph:
                 self.graph.remove_edge(file, neighbor)
 
         # remove isolated nodes
-        for node in list(self.graph.nodes):
-            if self.graph.degree(node) == 0:
-                self.graph.remove_node(node)
+        # for node in list(self.graph.nodes):
+        #     if self.graph.degree(node) == 0:
+        #         self.graph.remove_node(node)
 
         if show:
             self.show()
