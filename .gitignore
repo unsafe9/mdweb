@@ -1,0 +1,9 @@
+.vscode/
+.idea/
+mdweb.iml
+**/.DS_Store
+venv/
+
+# project
+index.html
+dist/
