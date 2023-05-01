@@ -1,3 +1,7 @@
+#!/usr/bin/python
+
+# this is for python users
+
 import os
 import time
 import markdown
@@ -40,9 +44,9 @@ class MarkdownGraph:
                 self.graph.add_edge(file, linked_file)
 
         # remove edges that no longer exist
-        for neighbor in list(self.graph.neighbors(file)):
-            if neighbor not in linked_files:
-                self.graph.remove_edge(file, neighbor)
+        # for neighbor in list(self.graph.neighbors(file)):
+        #     if neighbor not in linked_files:
+        #         self.graph.remove_edge(file, neighbor)
 
         # remove isolated nodes
         # for node in list(self.graph.nodes):
@@ -83,7 +87,7 @@ class MarkdownWatcher(FileSystemEventHandler):
         if event.is_directory:
             return
         if event.event_type == 'created' or event.event_type == 'modified':
-            file = os.path.basename(event.src_path)
+            file = os.path.relpath(self.graph.directory, event.src_path)
             if file.endswith(".md"):
                 print(f"{file} was {event.event_type}")
                 self.graph.update_graph(file)
@@ -100,7 +104,7 @@ class MarkdownWatcher(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    graph = MarkdownGraph(directory="examples", output="dist/index.html")
+    graph = MarkdownGraph(directory="examples", output="index.html")
     graph.show()
 
     watcher = MarkdownWatcher(graph)

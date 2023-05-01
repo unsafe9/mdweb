@@ -1,0 +1,21 @@
+{
+  "name": "mdweb",
+  "version": "1.0.0",
+  "description": "Display link connections between markdown files in a directional graph.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.1.3"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "jsdom": "^21.1.1",
+    "markdown": "^0.5.0",
+    "vis-network": "^9.1.6"
+  }
+}

@@ -2,8 +2,6 @@
 .idea/
 mdweb.iml
 **/.DS_Store
-venv/
+**/venv/
+node_modules/
 
-# project
-index.html
-dist/

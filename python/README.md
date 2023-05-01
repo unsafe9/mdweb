@@ -1,10 +1,10 @@
-# mdweb
+# mdweb in python (Deprecated)
 
 Display link connections between markdown files in a directional graph.
 
 ## Setup
 
 ```bash
-npm install
-npm start
+pip install -r requirements.txt
+python graph.py
 ```
